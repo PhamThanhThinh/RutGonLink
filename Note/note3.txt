@@ -1,0 +1,15 @@
+ánh xạ -> mapping
+
+Guid
+
+Analytic:
+người ta click vào link bao nhiêu lần (đếm số lần click link rút gọn)
+
+Framework:
+Angular
+Vue
+Library:
+React
+(frontend)
+Javascript
+

@@ -1,0 +1,5 @@
+Tạo Database
+Tạo class model chứa các trường dữ liệu của bảng dữ liệu tạo thành database
+Code First
+Blazor
+.net 8 (.net core)
