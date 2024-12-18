@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RutGonLink.Data
 {
@@ -21,5 +22,9 @@ namespace RutGonLink.Data
     public bool IsActive { get; set; }
 
     public virtual ApplicationUser User { get; set; }
+
+    //[InverseProperty(nameof(LinkAnalytic.OriginalLink))]
+    [InverseProperty(nameof(LinkAnalytic.Link))]
+    public virtual ICollection<LinkAnalytic> LinkAnalytics { get; set; }
   }
 }

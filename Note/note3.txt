@@ -13,3 +13,18 @@ React
 (frontend)
 Javascript
 
+cookie
+
+Blazor (web)
+MAUI (app máy tính + app mobile)
+
+Interface
+
+Discord
+
+Zalo
+
+
+
+
+
