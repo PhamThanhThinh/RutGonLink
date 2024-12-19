@@ -1,0 +1,9 @@
+Vì đã sử dụng thư viện Identity -> cài sẵn sql và tool
+chạy lệnh 
+add-migration ThemBangLinkVaLinkAnalytic Data/LuuMigration
+
+update-database
+
+đối với windows thì máy chủ web là IIS
+apache
+xampp

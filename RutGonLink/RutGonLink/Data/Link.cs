@@ -9,14 +9,17 @@ namespace RutGonLink.Data
     public long Id { get; set; }
     // link dài (nhập giá trị đầu vào)
     [Required, Length(10, 4000)]
-    public string LongUrl { get; set; } = "";
+    //public string LongUrl { get; set; } = "";
+    public string LongUrl { get; set; }
 
     [Required, Length(5, 10)]
-    public string ShortUrl { get; set; } = ""; // link rút gọn -> link ngắn
-    public string ShortCode { get; set; } = "";
+    //public string ShortUrl { get; set; } = ""; // link rút gọn -> link ngắn
+    public string ShortUrl { get; set; }
+    //public string ShortCode { get; set; } = "";
 
     [Required]
-    public string UserId { get; set; } = "";
+    //public string UserId { get; set; } = "";
+    public string UserId { get; set; }
 
     // dùng để vô hiệu hóa đường link
     public bool IsActive { get; set; }
