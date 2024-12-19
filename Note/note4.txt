@@ -10,3 +10,6 @@ wwwroot
 đối với windows thì máy chủ web là IIS
 apache
 xampp
+
+giao diện chức năng
+giao diện quản trị
