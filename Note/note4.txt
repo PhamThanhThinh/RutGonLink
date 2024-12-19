@@ -4,6 +4,9 @@ add-migration ThemBangLinkVaLinkAnalytic Data/LuuMigration
 
 update-database
 
+web root
+wwwroot
+
 đối với windows thì máy chủ web là IIS
 apache
 xampp

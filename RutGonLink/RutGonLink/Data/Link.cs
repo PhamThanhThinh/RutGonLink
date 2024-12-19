@@ -16,6 +16,7 @@ namespace RutGonLink.Data
     //public string ShortUrl { get; set; } = ""; // link rút gọn -> link ngắn
     public string ShortUrl { get; set; }
     //public string ShortCode { get; set; } = "";
+    public string ShortCode { get; set; }
 
     [Required]
     //public string UserId { get; set; } = "";

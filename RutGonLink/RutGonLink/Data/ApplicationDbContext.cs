@@ -11,6 +11,10 @@ namespace RutGonLink.Data
     {
       // Cấu hình bảng, cột, khóa chính, khóa ngoại, ràng buộc, v.v.
       base.OnModelCreating(modelBuilder);
+
+      modelBuilder.Entity<Link>()
+        .HasIndex(code => code.ShortCode)
+        .IsUnique();
     }
   }
 }
