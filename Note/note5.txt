@@ -1,0 +1,14 @@
+Xaml: làm giao diện ứng dụng máy tính và ứng dụng điện thoại
+
+vite
+
+cái project quản lý dùng api
+
+
+library react
+
+
+dev -> hỏi -> QA (dịch sang tiếng Nhật) -> bên Nhật
+Nhật -> QA -> dev
+
+api giúp tái sử dụng code

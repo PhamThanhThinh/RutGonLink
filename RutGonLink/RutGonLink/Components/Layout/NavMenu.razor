@@ -5,7 +5,7 @@
 
 <AuthorizeView>
   <NotAuthorized>
-    <a href="account/login" class="btn btn-primary mt-2">Đăng Nhập</a>
+    @* <a href="account/login" class="btn btn-primary mt-2">Đăng Nhập</a> *@
     @* <div class="d-flex">
       <a href="app/dashboard" class="link-info">Dashboard (Trang tổng quan)</a>
     </div> *@
@@ -42,7 +42,7 @@
     </div>
 </div>
 
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+@* <input type="checkbox" title="Navigation menu" class="navbar-toggler" />
 
 <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
     <nav class="flex-column">
@@ -101,7 +101,7 @@
             </NotAuthorized>
         </AuthorizeView>
     </nav>
-</div>
+</div> *@
 
 @code {
     private string? currentUrl;

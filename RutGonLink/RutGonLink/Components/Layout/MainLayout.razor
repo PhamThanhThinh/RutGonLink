@@ -1,14 +1,15 @@
 ﻿@inherits LayoutComponentBase
+@using Microsoft.AspNetCore.Components.Sections
 
-<div class="page">
+@* <div class="page">
   <div class="sidebar">
     <NavMenu />
   </div>
 
-  @* <div class="container-fluid bg-light text-black top-banner">
+  <div class="container-fluid bg-light text-black top-banner">
       test
-    </div> *@
-  <div class="bg-primary text-white text-center py-3">
+    </div>
+  <div class="bg-info text-white text-center py-3">
     <p class="mb-0">Chào Mừng Đến Trang Web Rút Gọn Link Của Chúng Tôi</p>
   </div>
 
@@ -34,7 +35,64 @@
       @Body
     </article>
   </main>
+</div> *@
+
+<div class="page">
+  @* <div class="container-fluid top-banner">
+    infinity
+    &infin;
+    &#128279;
+    <NavMenu />
+  </div> *@
+
+  <div class="container mt-3">
+    <div class="row mt-5 mb-2">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-sm-6 d-flex align-items-end">
+
+            @* <a href="/" class="text-decoration-none text-dark">
+            <h3>Nhập Link Cần Rút Gọn Vào</h3>
+          </a> *@
+
+            <h3 class="fw-bold m-0">
+              <a href="/" class="text-decoration-none text-dark">Web Này Dùng Để Rút Gọn Link</a>
+            </h3>
+
+            @* <a href="/" class="text-decoration-none">Nhập Link Cần Rút Gọn Vào</a> *@
+          </div>
+
+          <div class="col-sm-6 d-flex justify-content-end">
+            @* <a href="Account/Login" class="btn btn-primary">
+              Đăng Nhập
+            </a> *@
+            <NavMenu />
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      @* <div class="col-12 bg-dark p-4 rounded">
+        <SectionOutlet SectionName="page-title" />
+        <SectionOutlet SectionName="heading" />
+        @Body
+      </div> *@
+      <div class="col-12 bg-info p-4 rounded">
+        @* <h3 class="text-white fw-bold text-center">Chúng Tôi Chỉ Rút Gọn Những Link Dài Mà Thôi <br /> Link Ngắn Quá Sẽ Không Hoạt Động Nha</h3> *@
+        @* <Microsoft.AspNetCore.Components.Sections.SectionOutlet></Microsoft.AspNetCore.Components.Sections.SectionOutlet> *@
+        <SectionOutlet SectionName="page-title" />
+        <SectionOutlet SectionName="heading" />
+        @Body
+      </div>
+      
+    </div>
+  </div>
 </div>
+
+
+
+
 
 <div id="blazor-error-ui">
   An unhandled error has occurred.

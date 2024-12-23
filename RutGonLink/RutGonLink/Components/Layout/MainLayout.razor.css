@@ -1,4 +1,4 @@
-.page {
+﻿.page {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -94,3 +94,24 @@ main {
         right: 0.75rem;
         top: 0.5rem;
     }
+
+/*.top-banner {
+  background-color: #ffcc00;
+  color: #000;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+  position: fixed;*/ /* Giữ ở trên cùng khi người dùng cuộn */
+  /*width: 100%;
+  z-index: 1000;*/ /* Đảm bảo nó hiển thị trên các phần tử khác */
+/*}*/
+
+.top-banner {
+  position: absolute;
+  /*reset css*/
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
