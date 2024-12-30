@@ -6,3 +6,11 @@ bg-info: màu xanh dương nhạt
 SectionContent
 SectionOutlet
 dùng cho chia layout giống PartialView trong asp.net core mvc
+
+modal
+
+seed Data (seeding data)
+
+Microsoft.AspNetCore.Identity.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools

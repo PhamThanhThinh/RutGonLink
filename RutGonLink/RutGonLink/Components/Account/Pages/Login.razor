@@ -16,7 +16,7 @@
 
 @* <SectionContent/> *@
 
-<SectionContent SectionName="page-title">
+<SectionContent SectionName="heading">
   <h3 class="text-white fw-bold text-center">Đăng Nhập</h3>
 </SectionContent>
 
@@ -26,6 +26,7 @@
             đống code StatusMessage và EditForm từng ở đây
         </section> *@
     <StatusMessage Message="@errorMessage" />
+    @* <EditForm Model="Input" method="post" OnValidSubmit="LoginUser" FormName="login" Enhance="true"> Enhance làm cho giao diện mượt *@
     <EditForm Model="Input" method="post" OnValidSubmit="LoginUser" FormName="login">
       <DataAnnotationsValidator />
       @* <h2>Use a local account to log in.</h2> *@
