@@ -4,64 +4,73 @@
 @using Microsoft.AspNetCore.Authentication
 @using Microsoft.AspNetCore.Identity
 @using RutGonLink.Data
+@using Microsoft.AspNetCore.Components.Sections
 
 @inject SignInManager<ApplicationUser> SignInManager
 @inject ILogger<Login> Logger
 @inject NavigationManager NavigationManager
 @inject IdentityRedirectManager RedirectManager
 
-<PageTitle>Log in</PageTitle>
+@* hiển thị trên tab của trình duyệt *@
+<PageTitle>Đăng Nhập</PageTitle>
 
-<h1>Log in</h1>
+@* <SectionContent/> *@
+
+<SectionContent SectionName="page-title">
+  <h3 class="text-white fw-bold text-center">Đăng Nhập</h3>
+</SectionContent>
+
 <div class="row">
-    <div class="col-md-4">
-        <section>
-            <StatusMessage Message="@errorMessage" />
-            <EditForm Model="Input" method="post" OnValidSubmit="LoginUser" FormName="login">
-                <DataAnnotationsValidator />
-                <h2>Use a local account to log in.</h2>
-                <hr />
-                <ValidationSummary class="text-danger" role="alert" />
-                <div class="form-floating mb-3">
-                    <InputText @bind-Value="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                    <label for="email" class="form-label">Email</label>
-                    <ValidationMessage For="() => Input.Email" class="text-danger" />
-                </div>
-                <div class="form-floating mb-3">
-                    <InputText type="password" @bind-Value="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
-                    <label for="password" class="form-label">Password</label>
-                    <ValidationMessage For="() => Input.Password" class="text-danger" />
-                </div>
-                <div class="checkbox mb-3">
-                    <label class="form-label">
-                        <InputCheckbox @bind-Value="Input.RememberMe" class="darker-border-checkbox form-check-input" />
-                        Remember me
-                    </label>
-                </div>
-                <div>
-                    <button type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
-                </div>
-                <div>
-                    <p>
+    <div class="col-sm-4 mx-auto border p-3">
+        @* <section>
+            đống code StatusMessage và EditForm từng ở đây
+        </section> *@
+    <StatusMessage Message="@errorMessage" />
+    <EditForm Model="Input" method="post" OnValidSubmit="LoginUser" FormName="login">
+      <DataAnnotationsValidator />
+      @* <h2>Use a local account to log in.</h2> *@
+      <h2>Đăng Nhập Bằng Tài Khoản Của Bạn</h2>
+      <hr />
+      <ValidationSummary class="text-danger" role="alert" />
+      <div class="form-floating mb-3">
+        <InputText @bind-Value="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+        <label for="email" class="form-label">Email</label>
+        <ValidationMessage For="() => Input.Email" class="text-danger" />
+      </div>
+      <div class="form-floating mb-3">
+        <InputText type="password" @bind-Value="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
+        <label for="password" class="form-label">Password</label>
+        <ValidationMessage For="() => Input.Password" class="text-danger" />
+      </div>
+      <div class="checkbox mb-3">
+        <label class="form-label">
+          <InputCheckbox @bind-Value="Input.RememberMe" class="darker-border-checkbox form-check-input" />
+          Remember me
+        </label>
+      </div>
+      <div>
+        <button type="submit" class="w-100 btn btn-lg btn-primary">Đăng Nhập</button>
+      </div>
+      <div>
+        @* <p>
                         <a href="Account/ForgotPassword">Forgot your password?</a>
-                    </p>
-                    <p>
-                        <a href="@(NavigationManager.GetUriWithQueryParameters("Account/Register", new Dictionary<string, object?> { ["ReturnUrl"] = ReturnUrl }))">Register as a new user</a>
-                    </p>
-                    <p>
+                    </p> *@
+        <p>
+          <a href="@(NavigationManager.GetUriWithQueryParameters("Account/Register", new Dictionary<string, object?> { ["ReturnUrl"] = ReturnUrl }))">Đăng Ký Một Tài Khoản Mới</a>
+        </p>
+        @* <p>
                         <a href="Account/ResendEmailConfirmation">Resend email confirmation</a>
-                    </p>
-                </div>
-            </EditForm>
-        </section>
+                    </p> *@
+      </div>
+    </EditForm>
     </div>
-    <div class="col-md-6 col-md-offset-2">
+    @* <div class="col-md-6 col-md-offset-2">
         <section>
             <h3>Use another service to log in.</h3>
             <hr />
             <ExternalLoginPicker />
         </section>
-    </div>
+    </div> *@
 </div>
 
 @code {

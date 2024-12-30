@@ -1,0 +1,8 @@
+Lập Trình Web ASP.NET Với Blazor - Làm Web Rút Gọn Link - Bài 5 - Coding With Thinh
+ctrol + dấu cách: hiển thị gợi ý code trong Visual Studio
+
+bg-info: màu xanh dương nhạt
+
+SectionContent
+SectionOutlet
+dùng cho chia layout giống PartialView trong asp.net core mvc

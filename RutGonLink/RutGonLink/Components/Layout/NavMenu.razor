@@ -23,6 +23,24 @@
         </button>
       </form>
     </div> *@
+
+    @* thử show giao diện nút "Đăng Xuất" *@
+    @* <button type="submit" class="nav-link btn btn-outline-dark">
+      <span class="bi bi-arrow-bar-left-nav-menu" aria-hidden="true"></span> Đăng Xuất
+    </button> *@
+
+    @* thử show giao diện nút "Đăng Xuất" *@
+    @* <button type="submit" class="nav-link btn btn-danger">
+      <span class="bi bi-arrow-bar-left-nav-menu text-light" aria-hidden="true"></span> Đăng Xuất
+    </button> *@
+
+    @* thử show giao diện nút "Đăng Xuất" *@
+    @* <button type="submit" class="nav-link btn btn-danger">
+      <span class="text-white">
+        Đăng Xuất
+      </span>
+    </button> *@
+
   </NotAuthorized>
   <Authorized>
     <div class="d-flex">
@@ -31,9 +49,21 @@
       <form action="account/logout" method="post">
         <AntiforgeryToken />
         <input  type="hidden" name="ReturnUrl" value="@currentUrl"/>
-        <button type="submit" class="nav-link">
-          <span class="bi bi-arrow-bar-left-nav-menu" aria-hidden="true"></span> Đăng Xuất
+        @* <button type="submit" class="nav-link btn btn-danger">
+          <span class="bi bi-arrow-bar-left-nav-menu" aria-hidden="true"></span> 
+          Đăng Xuất
+        </button> *@
+
+        @* <button type="submit" class="nav-link btn btn-danger">
+          Đăng Xuất
+        </button> *@
+
+        <button type="submit" class="nav-link btn btn-danger">
+          <span class="text-white">
+            Đăng Xuất
+          </span>
         </button>
+
       </form>
     </div>
   </Authorized>
