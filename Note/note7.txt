@@ -30,3 +30,7 @@ truy cập VPS Linux dùng Bitvise
 (có nhiều chức năng hơn Putty)
 
 trong lập trình web có nhiều khái niệm trùng tên
+
+render mã cho từng đường link được nhập vào
+chuỗi các ký tự từ A tới Z từ a tới z từ 0 tới 9
+sẽ dùng các ký tự được liệt kê trong chuỗi trên để tạo code rút gọn link
