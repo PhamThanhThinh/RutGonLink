@@ -1,0 +1,31 @@
+﻿@using System.ComponentModel.DataAnnotations
+<h3>Form Rút Gọn Link</h3>
+
+<EditForm Model="_model" OnValidSubmit="GenerateShortUrl">
+  <div class="mb-3">
+    <input type="text" class="form-control" placeholder="Nhập Một Đường Link Vào" />
+    <button class="btn btn-primary">
+      Rút Gọn Link
+    </button>
+  </div>
+</EditForm>
+
+@code {
+
+  // private FormRutGonLinkModel _model = new FormRutGonLinkModel();
+  private FormRutGonLinkModel _model = new();
+  
+  // đặt cờ hiệu check tiến trình của code
+  private bool _datCoHieu;
+
+  class FormRutGonLinkModel {
+    [Required, Length(10, 4000)]
+    public string LongUrl { get; set; }
+  }
+
+  private void GenerateShortUrl()
+  {
+
+  }
+
+}

@@ -1,0 +1,15 @@
+Tạo một tài khoản trang web rút gọn link
+email: codingwiththinh@gmail.com
+mật khẩu:
+d3#@f5R86ruspPU
+Sau đó vào sql để xem thông tin tài khoản
+Dùng thư viện Identity để làm form đăng ký một tài khoản
+
+Microsoft: MAUI
+Google: Flutter
+
+generate
+
+domain + code (mã được generate)
+
+right -> end (bootstrap)
