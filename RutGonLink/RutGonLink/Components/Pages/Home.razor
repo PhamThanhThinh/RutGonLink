@@ -1,5 +1,6 @@
 ﻿@page "/"
 @using Microsoft.AspNetCore.Components.Sections
+@using RutGonLink.Client.SharedComponents
 
 <PageTitle>Home</PageTitle>
 
@@ -21,5 +22,32 @@ Welcome to your new app.
 </button> *@
 
 @* làm một form chứa textbox để nhập đường link dài ở đây *@
+
+
+<div class="row">
+  <div class="col-sm-6 my-2 mx-auto rounded shadow">
+    <FormRutGonLink @rendermode="InteractiveAuto" />
+  </div>
+</div>
+
+<div class="row my-2">
+  <div class="col-12">
+
+    <h3 class="fw-bold mb-4">
+      Kết quả: (nên dùng area)
+    </h3>
+    <ul class="list-unstyled">
+      <li>
+        <p class="">&rarr;</p> Link ban đầu
+      </li>
+      <li>
+        <p class="">&rarr;</p> Link sau khi đã rút gọn
+      </li>
+      <li>
+        <p class="">&rarr;</p> Link rút gọn copy trong một lần click
+      </li>
+    </ul>
+  </div>
+</div>
 
 

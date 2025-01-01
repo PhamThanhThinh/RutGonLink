@@ -1,0 +1,63 @@
+﻿@using System.ComponentModel.DataAnnotations
+<h3>Form Rút Gọn Link</h3>
+
+<div>
+  <EditForm Model="_model" OnValidSubmit="GenerateShortUrl">
+
+    <DataAnnotationsValidator />
+
+    <div class="mb-3">
+      @* <input type="text" class="form-control" placeholder="Nhập Một Đường Link Vào" /> *@
+      @* <InputText @bind-Value="_model.LongUrl" class="form-control" placeholder="Nhập Một Đường Link Vào"></InputText> *@
+      <InputText @bind-Value="_model.LongUrl" class="form-control" placeholder="Nhập Một Đường Link Vào" />
+      @* <button class="btn btn-primary">
+      Rút Gọn Link
+    </button> *@
+
+      @* hiển thị message lỗi message của chức năng rút gọn link *@
+      <ValidationMessage For="@(() => _model.LongUrl)" />
+
+    </div>
+
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary" disabled="@_datCoHieu">
+        @( _datCoHieu ? "Tiên trình đang được thực thi..." : "Rút gọn link" )
+      </button>
+    </div>
+
+  </EditForm>
+</div>
+
+@if (_datCoHieu)
+{
+  <Loader />
+}
+
+@code {
+
+  // private FormRutGonLinkModel _model = new FormRutGonLinkModel();
+  private FormRutGonLinkModel _model = new();
+
+  // đặt cờ hiệu check tiến trình của code
+  private bool _datCoHieu;
+
+
+  // ứng dụng làm load quảng cáo khi muốn duy trì trang
+  private async Task RutGonLinkAsync()
+  {
+    _datCoHieu = true;
+    await Task.Delay(2000);
+    _datCoHieu = false;
+  }
+
+  class FormRutGonLinkModel {
+    [Required, Length(10, 4000)]
+    public string LongUrl { get; set; }
+  }
+
+  private void GenerateShortUrl()
+  {
+
+  }
+
+}

@@ -13,3 +13,20 @@ generate
 domain + code (mã được generate)
 
 right -> end (bootstrap)
+
+ctrl D để nhân đôi code của dòng được quét chọn hoặc dòng nơi con trỏ được check vào
+
+toán tử 3 ngôi
+a ? b : c
+
+ánh xạ (ít dùng)
+mapping (từ thường dùng)
+
+trong blazor người ta dùng tag để gọi một view
+
+margin trục Oxy
+
+truy cập VPS Linux dùng Bitvise
+(có nhiều chức năng hơn Putty)
+
+trong lập trình web có nhiều khái niệm trùng tên
