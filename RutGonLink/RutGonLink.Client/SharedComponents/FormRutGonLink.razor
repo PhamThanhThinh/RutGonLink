@@ -41,7 +41,6 @@
   // đặt cờ hiệu check tiến trình của code
   private bool _datCoHieu;
 
-
   // ứng dụng làm load quảng cáo khi muốn duy trì trang
   private async Task RutGonLinkAsync()
   {
@@ -51,8 +50,6 @@
     _datCoHieu = false;
     // chúng ta sẽ phải viết logic rút gọn link ở đây
     // và phải liên kết link được render vào domain
-
-
   }
 
   class FormRutGonLinkModel {
@@ -69,5 +66,4 @@
     Console.WriteLine($"Original URL: {originalUrl}");
     Console.WriteLine($"Shortened URL: {shortUrl}");
   }
-
 }
