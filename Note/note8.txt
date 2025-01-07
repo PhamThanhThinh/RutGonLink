@@ -1,3 +1,20 @@
 ảnh -> byte có thể ảnh sau khi mã hóa sẽ bị mờ
 tìm cách tải nguyên vặn ảnh lên trên trang web
 cho người dùng tải về ở định dạng khác nhau và kích thước khác nhau: full hd ảnh, hd
+
+asp.net
+webform (giống winform)
+.net framework
+.net core
+blazor -> dùng component
+
+giống với khi làm việc với controller hoặc là tạo service trong .net core thì ở đây ta khai báo contructor
+
+destructor (c/c++)
+
+
+mvc (model-view-controller)
+
+ứng dụng nhắn tin realtime
+ví dụ CRUD
+Làm giao diện với html css

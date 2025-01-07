@@ -5,6 +5,7 @@ using RutGonLink.Client.Pages;
 using RutGonLink.Components;
 using RutGonLink.Components.Account;
 using RutGonLink.Data;
+using RutGonLink.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,7 +27,7 @@ builder.Services.AddAuthentication(options =>
     .AddIdentityCookies();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContextFactory<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -39,6 +40,8 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
+//builder.Services.AddSingleton<ISmsSender<ApplicationUser>, IdentityNoOpSmsSender>();
+builder.Services.AddTransient<ITaoCodeRutGonLinkService, TaoCodeRutGonLinkService>();
 
 var app = builder.Build();
 
