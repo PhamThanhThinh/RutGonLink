@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using RutGonLink.Client.Interfaces;
 using RutGonLink.Client.Pages;
 using RutGonLink.Components;
 using RutGonLink.Components.Account;
 using RutGonLink.Data;
+using RutGonLink.Endpoints;
 using RutGonLink.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -42,7 +44,7 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
 
 builder.Services.AddTransient<ITaoCodeRutGonLinkService, TaoCodeRutGonLinkService>();
-builder.Services.AddScoped<ILinkService, LinkService>();
+builder.Services.AddTransient<ILinkService, LinkService>();
 
 var app = builder.Build();
 
@@ -71,5 +73,5 @@ app.MapRazorComponents<App>()
 
 // Add additional endpoints required by the Identity /Account Razor components.
 app.MapAdditionalIdentityEndpoints();
-
+app.MapLinkEndpoint();
 app.Run();

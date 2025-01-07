@@ -1,4 +1,10 @@
 ﻿@using System.ComponentModel.DataAnnotations
+@using RutGonLink.Client.Interfaces
+@using RutGonLink.Client.DTOs
+@using System.Security.Claims
+@inject ILinkService LinkService
+@inject NavigationManager NavigationManager
+
 <h3>Form Rút Gọn Link</h3>
 
 <div>
@@ -35,6 +41,9 @@
 
 @code {
 
+  [CascadingParameter]
+  public Task<AuthenticationState> authenticationStateTask { get; set; }
+
   // private FormRutGonLinkModel _model = new FormRutGonLinkModel();
   private FormRutGonLinkModel _model = new();
 
@@ -46,7 +55,31 @@
   {
     // đây là code ví dụ thôi
     _datCoHieu = true;
-    await Task.Delay(2000);
+
+    var authState = await authenticationStateTask;
+    if (authState.User.Identity is null || !authState.User.Identity.IsAuthenticated)
+    {
+      // chuyển hướng đến trang login
+      NavigationManager.NavigateTo("/Account/Login");
+      return;
+    }
+    
+    var userId = authState.User.FindFirst(ClaimTypes.NameIdentifier)!.Value;
+
+    // Lấy giá trị của Claim "UserId"
+    // private string? UserId;
+    // var userIdClaim = user.FindFirst(claim => claim.Type == "UserId");
+    // if (userIdClaim != null)
+    // {
+    //   UserId = userIdClaim.Value;
+    // }
+
+    // await Task.Delay(2000);
+    // code xử lý rút gọn link
+    // await LinkService.GenerateShortUrlAsync(_model.LongUrl);
+    // GenerateShortUrl();
+    var dto = new LinkCreateDto(_model.LongUrl, userId);
+    var link = await LinkService.CreateLinkServiceAsync(dto);
     _datCoHieu = false;
     // chúng ta sẽ phải viết logic rút gọn link ở đây
     // và phải liên kết link được render vào domain

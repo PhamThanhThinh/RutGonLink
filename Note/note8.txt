@@ -27,3 +27,16 @@ máy mình bị chia ra 1 cái desktop ảo nữa
 Để di chuyển qua lại giữa các màn hình Desktop ảo này, bạn chỉ cần nhấn tổ hợp phím Ctrl + Windows + Phím mũi tên, hoặc nhấn tổ hợp phím Windows + Tab
 
 
+load ... đang ...
+
+
+
+DeepSeek của China cũng dùng mô hình của GPT4 Claude
+
+phím Tab
+
+GitHub Copilot giúp chúng ta code nhanh hơn rất nhiều
+
+
+Admin!@#$%12345
+
