@@ -40,8 +40,9 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
-//builder.Services.AddSingleton<ISmsSender<ApplicationUser>, IdentityNoOpSmsSender>();
+
 builder.Services.AddTransient<ITaoCodeRutGonLinkService, TaoCodeRutGonLinkService>();
+builder.Services.AddScoped<ILinkService, LinkService>();
 
 var app = builder.Build();
 

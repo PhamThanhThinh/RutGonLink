@@ -18,3 +18,12 @@ mvc (model-view-controller)
 ứng dụng nhắn tin realtime
 ví dụ CRUD
 Làm giao diện với html css
+
+20 Bootstrap Galleries
+https://freefrontend.com/bootstrap-galleries/
+tìm giao diện làm web tải ảnh
+
+máy mình bị chia ra 1 cái desktop ảo nữa
+Để di chuyển qua lại giữa các màn hình Desktop ảo này, bạn chỉ cần nhấn tổ hợp phím Ctrl + Windows + Phím mũi tên, hoặc nhấn tổ hợp phím Windows + Tab
+
+

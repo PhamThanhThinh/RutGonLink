@@ -1,27 +1,77 @@
 ﻿
 
 using Microsoft.EntityFrameworkCore;
+using RutGonLink.Client.DTOs;
 using RutGonLink.Data;
 
 namespace RutGonLink.Services
 {
-  public class LinkService
+  public interface ILinkService
+  {
+    Task<LinkDto> CreateLinkServiceAsync(LinkCreateDto linkCreateDto);
+  }
+
+  public class LinkService : ILinkService
   {
     private readonly IDbContextFactory<ApplicationDbContext> _dbContextFactory;
     private readonly ITaoCodeRutGonLinkService _taoCodeRutGonLinkService;
-
-    public LinkService(IDbContextFactory<ApplicationDbContext> dbContextFactory, ITaoCodeRutGonLinkService taoCodeRutGonLinkService)
+    private readonly IConfiguration _configuration;
+    public LinkService(IDbContextFactory<ApplicationDbContext> dbContextFactory, 
+      ITaoCodeRutGonLinkService taoCodeRutGonLinkService,
+      IConfiguration configuration
+      )
     {
       _dbContextFactory = dbContextFactory;
       _taoCodeRutGonLinkService = taoCodeRutGonLinkService;
+      _configuration = configuration;
     }
 
-    public async Task CreateLinkServiceAsync(Link link)
+    //public async Task CreateLinkServiceAsync(Link link)
+    //{
+    //  await using var dbContext = _dbContextFactory.CreateDbContext();
+    //  link.ShortCode = await _taoCodeRutGonLinkService.TaoCodeRutGonLinkAsync();
+    //  dbContext.Links.Add(link);
+    //  await dbContext.SaveChangesAsync();
+    //}
+
+    //public async Task<Link> GetLinkByShortCodeAsync(string shortCode)
+    //{
+    //  await using var dbContext = _dbContextFactory.CreateDbContext();
+    //  return await dbContext.Links.FirstOrDefaultAsync(link => link.ShortCode == shortCode);
+    //}
+
+    //public async Task CreateLinkServiceAsync(string longUrl, string userId)
+    //{
+
+    //}
+
+    public async Task<LinkDto> CreateLinkServiceAsync(LinkCreateDto linkCreateDto)
     {
+      var domain = _configuration["Domain"] ?? throw new InvalidOperationException($"khong tim thay url, hay vao appsetting de set url");
+      var shortCode = await _taoCodeRutGonLinkService.TaoCodeRutGonLinkAsync();
+
+      var link = new Link
+      {
+        LongUrl = linkCreateDto.LongUrl,
+        UserId = linkCreateDto.UserId,
+        ShortCode = shortCode,
+        IsActive = true,
+        ShortUrl = domain
+      };
+
       await using var dbContext = _dbContextFactory.CreateDbContext();
-      link.ShortCode = await _taoCodeRutGonLinkService.TaoCodeRutGonLinkAsync();
-      dbContext.Links.Add(link);
+      //dbContext.Links.Add(link);
+      await dbContext.Links.AddAsync(link);
       await dbContext.SaveChangesAsync();
+
+      return new LinkDto
+      {
+        Id = link.Id,
+        LongUrl = link.LongUrl,
+        ShortUrl = link.ShortUrl,
+        ShortCode = link.ShortCode,
+        IsActive = link.IsActive
+      };
     }
   }
 }
