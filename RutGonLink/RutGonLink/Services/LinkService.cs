@@ -2,14 +2,15 @@
 
 using Microsoft.EntityFrameworkCore;
 using RutGonLink.Client.DTOs;
+using RutGonLink.Client.Interfaces;
 using RutGonLink.Data;
 
 namespace RutGonLink.Services
 {
-  public interface ILinkService
-  {
-    Task<LinkDto> CreateLinkServiceAsync(LinkCreateDto linkCreateDto);
-  }
+  //public interface ILinkService
+  //{
+  //  Task<LinkDto> CreateLinkServiceAsync(LinkCreateDto linkCreateDto);
+  //}
 
   public class LinkService : ILinkService
   {
