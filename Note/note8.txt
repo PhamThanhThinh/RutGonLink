@@ -1,0 +1,3 @@
+ảnh -> byte có thể ảnh sau khi mã hóa sẽ bị mờ
+tìm cách tải nguyên vặn ảnh lên trên trang web
+cho người dùng tải về ở định dạng khác nhau và kích thước khác nhau: full hd ảnh, hd

@@ -2,6 +2,10 @@
 {
   public class TaoCodeRutGonLinkService
   {
+    public ShortCodeGenerateService()
+    {
+
+    }
     public async Task<string> TaoCodeRutGonLinkAsync()
     {
       const string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
