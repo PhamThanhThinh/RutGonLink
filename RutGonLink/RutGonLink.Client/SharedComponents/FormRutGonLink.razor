@@ -3,7 +3,10 @@
 @using RutGonLink.Client.Interfaces
 @using RutGonLink.Client.DTOs
 @using System.Security.Claims
+@using RutGonLink.Client.Services
 @inject ILinkService LinkService
+@* @inject ILinkApi LinkApi *@
+
 @inject NavigationManager NavigationManager
 
 <h3>Form Rút Gọn Link</h3>
@@ -94,13 +97,13 @@
     public string LongUrl { get; set; }
   }
 
-  private void GenerateShortUrl()
-  {
-    // Giả sử đây là logic để rút gọn URL
-    string originalUrl = _model.LongUrl;
-    string shortUrl = $"http://localhost:7032/{Guid.NewGuid().ToString().Substring(0, 8)}";
+  // private void GenerateShortUrl()
+  // {
+  //   // Giả sử đây là logic để rút gọn URL
+  //   string originalUrl = _model.LongUrl;
+  //   string shortUrl = $"http://localhost:7032/{Guid.NewGuid().ToString().Substring(0, 8)}";
 
-    Console.WriteLine($"Original URL: {originalUrl}");
-    Console.WriteLine($"Shortened URL: {shortUrl}");
-  }
+  //   Console.WriteLine($"Original URL: {originalUrl}");
+  //   Console.WriteLine($"Shortened URL: {shortUrl}");
+  // }
 }

@@ -44,6 +44,7 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
 
 builder.Services.AddTransient<ITaoCodeRutGonLinkService, TaoCodeRutGonLinkService>();
+
 builder.Services.AddTransient<ILinkService, LinkService>();
 
 var app = builder.Build();

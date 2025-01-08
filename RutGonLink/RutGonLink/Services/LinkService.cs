@@ -51,13 +51,16 @@ namespace RutGonLink.Services
       var domain = _configuration["Domain"] ?? throw new InvalidOperationException($"khong tim thay url, hay vao appsetting de set url");
       var shortCode = await _taoCodeRutGonLinkService.TaoCodeRutGonLinkAsync();
 
+      var trimmedDomain = domain.TrimEnd('/');
+      var shortUrl = $"{trimmedDomain}/{shortCode}";
+
       var link = new Link
       {
         LongUrl = linkCreateDto.LongUrl,
-        UserId = linkCreateDto.UserId,
         ShortCode = shortCode,
+        ShortUrl = shortUrl,
+        UserId = linkCreateDto.UserId,
         IsActive = true,
-        ShortUrl = domain
       };
 
       await using var dbContext = _dbContextFactory.CreateDbContext();
@@ -74,5 +77,8 @@ namespace RutGonLink.Services
         IsActive = link.IsActive
       };
     }
+
+
+
   }
 }

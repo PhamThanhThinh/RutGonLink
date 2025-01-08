@@ -16,3 +16,7 @@ app mobile: adroid
 
 AI ở quanh ta
 
+POST
+
+review kết quả
+https://localhost:5000/Ab13$
