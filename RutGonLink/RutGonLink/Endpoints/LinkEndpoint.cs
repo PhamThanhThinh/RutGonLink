@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RutGonLink.Client.DTOs;
+using RutGonLink.Client.Extensions;
 using RutGonLink.Client.Interfaces;
 using RutGonLink.Data;
 using RutGonLink.Services;
@@ -61,7 +62,19 @@ namespace RutGonLink.Endpoints
         //return Results.Ok(result);
 
         //var userId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        var userId = user.FindFirst(ClaimTypes.NameIdentifier)!.Value;
+        //var userId = user.FindFirst(ClaimTypes.NameIdentifier)!.Value;
+
+        var userId = user.GetUserId();
+
+        if (userId != dto.UserId)
+        {
+          return Results.Unauthorized();
+        }
+
+        var link = await linkService.CreateLinkServiceAsync(dto);
+
+        return Results.Ok(link);
+
       }).RequireAuthorization();
       return endpoints;
     }

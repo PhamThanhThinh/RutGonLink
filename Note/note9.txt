@@ -2,3 +2,17 @@ Tạo file Extesion.cs
 User
 UserRole
 Đối với project dùng thư viện Identity để làm các chức năng đăng ký đăng nhập đăng xuất (chức năng về xác thực người dùng)
+
+biến động khi làm về đầu tư ...
+
+C# cơ bản + (nâng cao: injection ... ):
+làm app máy tính (windows, linux, macos): windowform (cũ), wpf (phổ biến), maui (mới)
+làm app điện thoại (máy điện thoại androi và ios): xamarin (rất nặng), maui (mới, ngon hơn, ra đời sau tiền thân là xamarin)
+làm web: asp.net core mvc (html css js)
+
+java
+web: java spring
+app mobile: adroid
+
+AI ở quanh ta
+
