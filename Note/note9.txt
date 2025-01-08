@@ -1,0 +1,4 @@
+Tạo file Extesion.cs
+User
+UserRole
+Đối với project dùng thư viện Identity để làm các chức năng đăng ký đăng nhập đăng xuất (chức năng về xác thực người dùng)
