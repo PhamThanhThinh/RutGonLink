@@ -60,8 +60,9 @@ namespace RutGonLink.Endpoints
 
         //return Results.Ok(result);
 
-        var userId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      });
+        //var userId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        var userId = user.FindFirst(ClaimTypes.NameIdentifier)!.Value;
+      }).RequireAuthorization();
       return endpoints;
     }
   }
